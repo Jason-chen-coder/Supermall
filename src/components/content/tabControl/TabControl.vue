@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  props: ['title'],
+  props: ['title',''],
   data () {
     return {
       currentindex: 0,
@@ -25,7 +25,7 @@ export default {
   methods: {
     changetype (index) {
       this.currentindex = index
-      this.$emit('changetype', this.type[index])
+      this.$emit('changetype', { type: this.type[index], index: index })
     }
   }
 }

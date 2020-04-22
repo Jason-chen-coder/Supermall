@@ -14,7 +14,7 @@
 
 <script>
 export default {
-
+  name: 'navbar'
 }
 </script>
 
@@ -22,6 +22,7 @@ export default {
 .navbar {
   height: 44px;
   display: flex;
+  width: 100%;
   line-height: 44px;
   text-align: center;
   box-shadow: 0 -5px 10px 1px;

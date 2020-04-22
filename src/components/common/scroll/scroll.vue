@@ -19,10 +19,15 @@ export default {
   methods: {
     // 对外提供返回顶部方法
     scrolltotop (x, y, time = 300) {
+      // console.log('scroll返回顶部1', y)
       this.scroll.scrollTo(x, y, time)
+      // console.log('scroll返回顶部2', y)
     },
     finishpullup () {
       this.scroll.finishPullUp()
+    },
+    refreshscroll () {
+      this.scroll.refresh()
     }
   },
   mounted () {

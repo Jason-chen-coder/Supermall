@@ -1,13 +1,13 @@
 <template>
   <div class="goodslist">
-    <goodsitem class="goodsitem" v-for="(item, index) in goodslist.list" :good="item" :key="index"></goodsitem>
+    <goodsitem class="goodsitem"  :iscommend='iscommend' v-for="(item, index) in goodslist.list" :good="item" :key="index"></goodsitem>
   </div>
 </template>
 
 <script>
 import goodsitem from './com/goodsitem'
 export default {
-  props: ['goodslist'],
+  props: ['goodslist','iscommend'],
   components: {
     goodsitem
   }

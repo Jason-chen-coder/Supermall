@@ -1,6 +1,7 @@
 <template>
-  <div class="gooditem">
-    <img :src="good.show.img" alt />
+  <div class="gooditem" @click="showgood()">
+  <img :src="good.image" v-if='iscommend' alt @load="loaded()" />
+    <img :src="good.show.img" v-else alt @load="loaded()" />
     <p class="title">{{good.title}}</p>
     <span class="price">{{good.price}}</span>
     <span class="collect">{{good.cfav}}</span>
@@ -9,9 +10,20 @@
 
 <script>
 export default {
-  props: ['good'],
+  props: ['good','iscommend'],
   mounted () {
-    console.log('单个产品信息', this.good)
+    // console.log('单个产品信息', this.good)
+  },
+  methods: {
+    showgood () {
+      // 去商品详情页
+      // console.log(this.good.iid)
+      this.$router.push(`/detail?iid=${this.good.iid}`)
+    },
+    loaded () {
+      // console.log('load')
+      this.$bus.$emit('imageloaded')
+    }
   }
 }
 </script>
