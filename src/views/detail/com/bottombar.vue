@@ -26,6 +26,8 @@ export default {
   methods: {
     addshop () {
       this.$emit('addgoodcar')
+      // 调用toast组件,提示加入成功
+      this.$toast.showtoast('加入购物车成功', 2000)
     }
   }
 }
